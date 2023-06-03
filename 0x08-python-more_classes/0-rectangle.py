@@ -2,6 +2,7 @@
 """
     Module containing a single class
 """
+
   class Rectangle:
     """
     Represents a rectangle
