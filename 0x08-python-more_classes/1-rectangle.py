@@ -5,29 +5,36 @@
 
 
 class Rectangle:
+    """Represents a rectangle. No body."""
+    
     def __init__(self, width=0, height=0):
-        self._width = self._check_dimension(width)
-        self._height = self._check_dimension(height)
+        if not isinstance(width, (int, float)):
+            raise TypeError("width must be an integer")
+        if width < 0:
+            raise ValueError("width must be >= 0")
+        if not isinstance(height, (int, float)):
+            raise TypeError("height must be an integer")
+        if height < 0:
+            raise ValueError("height must be >= 0")
+        self.__width = width
+        self.__height = height
 
-    def _check_dimension(self, dimension):
-        if not isinstance(dimension, (int, float)):
-            raise TypeError("Dimension must be an integer or float")
-        if dimension < 0:
-            raise ValueError("Dimension must be >= 0")
-        return dimension
-
-    @property
     def width(self):
-        return self._width
+        return self.__width
 
-    @width.setter
-    def width(self, value):
-        self._width = self._check_dimension(value)
-
-    @property
     def height(self):
-        return self._height
+        return self.__height
 
-    @height.setter
-    def height(self, value):
-        self._height = self._check_dimension(value)
+    def set_width(self, value):
+        if not isinstance(value, (int, float)):
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be >= 0")
+        self.__width = value
+
+    def set_height(self, value):
+        if not isinstance(value, (int, float)):
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = value
