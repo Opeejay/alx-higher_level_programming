@@ -6,7 +6,7 @@
 
 class Rectangle:
     """Represents a rectangle. No body."""
-    
+
     def __init__(self, width=0, height=0):
         if not isinstance(width, (int, float)):
             raise TypeError("width must be an integer")
