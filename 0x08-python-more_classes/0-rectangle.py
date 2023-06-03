@@ -3,7 +3,8 @@
     Module containing a single class
 """
 
-  class Rectangle:
+
+class Rectangle:
     """
     Represents a rectangle
     """
